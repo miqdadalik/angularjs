@@ -1,0 +1,83 @@
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">
+                        Users
+                        <a href="javascript:;" ng-click="add()" class="btn btn-primary">Add User</a>
+                    </h3>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Emp ID</th>
+                                <th>Emp Name</th>
+                                <th>Emp Locaton</th>
+                                <th>Emp DOB</th>
+                                <th>Emp DOJ</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-if="loading && !users.length">
+                                <td colspan="6">Loading users</td>
+                            </tr>
+                            <tr ng-if="!loading && !users.length">
+                                <td colspan="6">No users found</td>
+                            </tr>
+                            <tr ng-repeat="user in users">
+                                <td>{{user.emp_id}}</td>
+                                <td>{{user.emp_name}}</td>
+                                <td>{{user.emp_location}}</td>
+                                <td>{{user.emp_dob}}</td>
+                                <td>{{user.emp_doj}}</td>
+                                <td>
+                                    <a href="javascript:;" class="btn btn-default" ng-click="edit($index)">Edit</a>
+                                    <a href="javascript:;" class="btn btn-danger" ng-click="remove($index)">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+            <div class="box" ng-if="action=='edit' || action=='create'">
+                <div class="box-header">
+                    <h3 class="box-title" ng-if="action=='edit'">Edit {{selected_user.emp_name}}</h3>
+                    <h3 class="box-title" ng-if="action=='create'">Add User</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+                    <table>
+                        <tr>
+                            <th>Employee ID</th>
+                            <td><input type="text" ng-model="selected_user.emp_id" /></td>
+                        </tr>
+                        <tr>
+                            <th>Employee Name</th>
+                            <td><input type="text" ng-model="selected_user.emp_name" /></td>
+                        </tr>
+                        <tr>
+                            <th>Employee Location</th>
+                            <td><input type="text" ng-model="selected_user.emp_location" /></td>
+                        </tr>
+                        <tr>
+                            <th>Employee DOB</th>
+                            <td><input type="text" ng-model="selected_user.emp_dob" /></td>
+                        </tr>
+                        <tr>
+                            <th>Employee DOJ</th>
+                            <td><input type="text" ng-model="selected_user.emp_doj" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">
+                                <input type="button" class="btn btn-success" value="Update" ng-click="update()" ng-if="action=='edit'" />
+                                <input type="button" class="btn btn-success" value="Create" ng-click="save()" ng-if="action=='create'" />
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+[
+    {
+        "emp_id": "1",
+        "emp_name": "Miqdad",
+        "emp_location": "Cochin, Kerala",
+        "emp_dob": "21-May-1991",
+        "emp_doj": "21-May-2010"
+    },
+    {
+        "emp_id": "2",
+        "emp_name": "Anooj",
+        "emp_location": "Cochin, Kerala",
+        "emp_dob": "1-July-1990",
+        "emp_doj": "1-July-2011"
+    },
+    {
+        "emp_id": "3",
+        "emp_name": "Pratheek",
+        "emp_location": "Bangalore, Karnataka",
+        "emp_dob": "12-June-1991",
+        "emp_doj": "12-June-2012"
+    },
+    {
+        "emp_id": "4",
+        "emp_name": "Sujith",
+        "emp_location": "Chennai, Tamilnadu",
+        "emp_dob": "16-Jan-1989",
+        "emp_doj": "16-Jan-2013"
+    }
+]
